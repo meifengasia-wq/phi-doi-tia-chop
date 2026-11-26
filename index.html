@@ -75,7 +75,20 @@
   #screen.between .eyebrow{color:#ffda78;}
   @media(max-height:740px){#worldChooser{margin:4px 0 9px}.worldTile{min-height:44px}.panel{padding:15px 18px}#screenText{font-size:12px;margin:9px 0 11px}#screen h1{margin:6px 0}.fineprint{margin-top:8px}}
   #rotate {display:none;position:absolute;inset:0;z-index:30;align-items:center;justify-content:center;background:#030b1b;text-align:center;padding:30px;font-size:22px;font-weight:850;}
-  @media (orientation:landscape) and (max-height:500px) {#rotate{display:flex}}
+  /* RYAN DESKTOP PORTRAIT FIX: keep the portrait game centered on computers. */
+  @media screen and (min-width:760px) and (pointer:fine) {
+    html,body { background:#020815; }
+    body { background:radial-gradient(ellipse at center,#12314e 0%,#061426 43%,#020815 100%); }
+    #app {
+      left:50%; right:auto; top:0; bottom:0;
+      width:min(100vw,440px); height:100dvh;
+      transform:translateX(-50%);
+      border-left:1px solid #3ddcff33;
+      border-right:1px solid #3ddcff33;
+      box-shadow:0 0 90px #000a,0 0 0 1px #82eaff15;
+    }
+  }
+  @media (orientation:landscape) and (max-width:759px) and (max-height:500px) {#rotate{display:flex}}
   @media (max-height:690px) {.panel{padding:17px 21px}.panel h1{font-size:29px}#hero{width:80px;height:74px}.bars{margin-top:5px;padding:6px 9px}#bossPanel{top:150px}}
 </style>
 </head>
